@@ -14,7 +14,7 @@
 #include "./libft/libft.h"
 #include "./ft_printf.h"
 
-static int	handle_conversion(char c, va_list ap)
+static int	handle_conversion(char c, va_list *ap)
 {
 	if (c == 'c')
 		return (ft_print_char(ap));
@@ -55,7 +55,7 @@ int	ft_printf(const char *format, ...)
 	while (*format)
 	{
 		if (*format == '%')
-			printed_chars += handle_conversion(*++format, ap);
+			printed_chars += handle_conversion(*++format, &ap);
 		else
 		{
 			ft_putchar_fd(*format, 1);
@@ -66,6 +66,7 @@ int	ft_printf(const char *format, ...)
 	va_end(ap);
 	return (printed_chars);
 }
+
 //
 //#include <stdio.h>
 //int	main()
@@ -74,6 +75,8 @@ int	ft_printf(const char *format, ...)
 //	int		i;
 //	char	*str = NULL;
 //
+//	ft_printf("Magic %s is %d\n", "number", 42);
+//	ft_printf("%s, %d, %x\n", "hello", 255, 255);
 //	ft_printf("%u\n", -1);
 //	printf("%u\n", -1);
 //	ft_printf("%p\n", p);

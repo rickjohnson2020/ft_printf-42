@@ -15,13 +15,13 @@
 #include "./libft/libft.h"
 #include "./ft_printf.h"
 
-int	ft_print_unsigned(va_list ap)
+int	ft_print_unsigned(va_list *ap)
 {
 	unsigned int	num;
 	char			*num_str;
 	int				printed;
 
-	num = va_arg(ap, unsigned int);
+	num = va_arg(*ap, unsigned int);
 	num_str = ft_utoa(num);
 	ft_putstr_fd(num_str, 1);
 	printed = ft_strlen(num_str);

@@ -13,13 +13,13 @@
 #include <stdarg.h>
 #include "./ft_printf.h"
 
-int	ft_print_hex(va_list ap, char specifier)
+int	ft_print_hex(va_list *ap, char specifier)
 {
 	unsigned int	num;
 	char			*base;
 	int				printed;
 
-	num = va_arg(ap, unsigned int);
+	num = va_arg(*ap, unsigned int);
 	if (specifier == 'x')
 		base = "0123456789abcdef";
 	else

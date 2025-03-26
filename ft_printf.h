@@ -17,11 +17,11 @@
 int		ft_printf(const char *format, ...);
 int		ft_putnbr_base(unsigned long nbr, char *base);
 char	*ft_utoa(unsigned int n);
-int		ft_print_char(va_list ap);
-int		ft_print_decimal(va_list ap);
-int		ft_print_hex(va_list ap, char specifier);
-int		ft_print_pointer(va_list ap);
-int		ft_print_str(va_list ap);
-int		ft_print_unsigned(va_list ap);
+int		ft_print_char(va_list *ap);
+int		ft_print_decimal(va_list *ap);
+int		ft_print_hex(va_list *ap, char specifier);
+int		ft_print_pointer(va_list *ap);
+int		ft_print_str(va_list *ap);
+int		ft_print_unsigned(va_list *ap);
 
 #endif

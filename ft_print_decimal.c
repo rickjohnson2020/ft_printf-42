@@ -14,13 +14,13 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
-int	ft_print_decimal(va_list ap)
+int	ft_print_decimal(va_list *ap)
 {
 	int		num;
 	char	*num_str;
 	int		printed;
 
-	num = va_arg(ap, int);
+	num = va_arg(*ap, int);
 	num_str = ft_itoa(num);
 	ft_putstr_fd(num_str, 1);
 	printed = ft_strlen(num_str);

@@ -15,12 +15,12 @@
 #include "./libft/libft.h"
 #include "./ft_printf.h"
 
-int	ft_print_pointer(va_list ap)
+int	ft_print_pointer(va_list *ap)
 {
 	unsigned long	num;
 	int				printed;
 
-	num = (unsigned long)va_arg(ap, void *);
+	num = (unsigned long)va_arg(*ap, void *);
 	if (num == 0)
 	{
 		ft_putstr_fd("(nil)", 1);
